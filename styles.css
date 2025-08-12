@@ -1,0 +1,796 @@
+/* --- Login Page Styles --- */
+
+/* Import a clean, modern font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+.login-body {
+    font-family: 'Poppins', sans-serif;
+    /* Replace with a high-quality background image of your choice */
+    background-image: url("pics/flugplatz_ohlstadt.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+}
+
+.login-container .logo img {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.login-container h1 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.login-container p.subtitle {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.login-container .form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
+    color: #555;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.login-container input[type="email"]:focus,
+.login-container input[type="password"]:focus {
+    outline: none;
+    border-color: #0073e6;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 15px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.login-container button:hover {
+    background-color: #005bb5;
+}
+
+.login-container button:active {
+    transform: scale(0.98);
+}
+
+.login-links {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.login-links a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}
+
+.login-message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.login-message.success {
+    background-color: #28a745;
+}
+
+.login-message.error {
+    background-color: #dc3545;
+}
+
+/* --- App Layout & General Styles --- */
+.app-body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f8f9fa; /* Lighter grey for app background */
+    color: #333;
+}
+
+.app-header {
+    background-color: #fff;
+    padding: 15px 30px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.app-header .logo img {
+    height: 40px;
+    display: block;
+}
+
+.app-header-nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+}
+
+.app-container {
+    max-width: 1350px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Refined Section Style */
+.section {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+.section h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Refined Form Styles */
+.form-group label {
+    font-size: 14px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+/* --- Increased Row Spacing for Tables --- */
+.styled-table th,
+.styled-table td {
+    /* Reduce horizontal padding from 15px to 8px */
+    padding-left: 8px;
+    padding-right: 8px;
+
+    /* Slightly reduce vertical padding for a tighter look */
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* Make inputs and selects inside the table forms a bit smaller */
+.styled-table form input,
+.styled-table form select {
+    font-size: 14px;
+    padding: 6px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+    width: 100%; /* Make input fill the cell */
+}
+
+/* Specific adjustments for stacked inputs (Name, Aufenthalt) */
+.styled-table form input[name="vorname"],
+.styled-table form input[name="aufenthalt_von"] {
+    margin-bottom: 5px;
+}
+
+/* --- Refined Button Styles --- */
+
+/* Base button style improvements */
+.btn {
+    padding: 10px 18px;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn:active {
+    transform: scale(0.97); /* Subtle press-down effect */
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Accessibility focus ring */
+}
+
+/* Primary action button (e.g., "Add New") */
+
+
+.btn-primary {
+    background-color: #0073e6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #005bb5;
+}
+
+.btn-grey {
+    background-color: #dddddd;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #005bb5;
+}
+
+
+/* Danger action button (e.g., "Delete") */
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-success {
+    background-color: #28a745; 
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #218838; 
+}
+
+.btn-edit {
+    background-color: #28AADE;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #6CC1E4;
+}
+
+.btn.btn-icon {
+    width: 38px;
+    height: 38px;
+    padding: 0 !important; 
+    font-size: 16px;
+	 margin: 0;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+
+    line-height: 1 !important;
+}
+
+.btn.btn-icon > i {
+    margin: 0; 
+}
+
+/* Verbesserte Stile für die Tabellen */
+.styled-table {
+    width: 100%; /* Nutzt die volle Breite des Containers */
+    border-collapse: collapse; /* Sorgt für saubere, einfache Rahmen */
+    margin-top: 20px; /* Etwas Abstand nach oben */
+    font-size: 0.9em; /* Etwas kleinere Schrift für mehr Übersicht */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Dezenter Schatten für Tiefe */
+}
+
+/* Stil für Kopfzeile (<th>) und Zellen (<td>) */
+.styled-table th,
+.styled-table td {
+    border: 1px solid #ddd; /* Heller, grauer Rahmen um jede Zelle */
+    padding: 12px 15px;    /* Innenabstand für mehr Luft */
+    text-align: center;    /* Horizontale Zentrierung */
+    vertical-align: middle;/* Vertikale Zentrierung */
+}
+
+/* Spezifische Stile nur für die Kopfzeile */
+.styled-table thead th {
+    background-color: #007bff; /* Ein kräftiges Blau für den Header */
+    color: #ffffff;            /* Weißer Text für guten Kontrast */
+    font-weight: bold;         /* Fettschrift für die Titel */
+}
+
+/* Zebra-Streifen für bessere Lesbarkeit der Zeilen */
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+/* Stil für die Bearbeitungs- und Hinzufügen-Zeilen */
+.styled-table tr[id^="edit-"], 
+.styled-table tr[id="addParticipantForm"], 
+.styled-table tr[id="addAircraftForm"] {
+    background-color: #eef !important; /* Leicht violetter Hintergrund, um sie hervorzuheben */
+}
+
+/* Stil für die Sektions-Container */
+.section {
+    background-color: #ffffff; /* Weißer Hintergrund */
+    border: 1px solid #e0e0e0; /* Dezenter, heller Rahmen */
+    border-radius: 8px;       /* Abgerundete Ecken */
+    padding: 25px;            /* Mehr Innenabstand */
+    margin-bottom: 30px;      /* Größerer Abstand zwischen den Sektionen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Leichter Schatten für Tiefe */
+}
+
+/* Stil für die Überschriften der Sektionen (h3) */
+.section h3 {
+    font-size: 1.5em; /* Größere Schrift */
+    color: #333;       /* Dunklere Schriftfarbe für besseren Kontrast */
+    border-bottom: 2px solid #007bff; /* Blaue Linie unter der Überschrift */
+    padding-bottom: 10px; /* Abstand zwischen Text und Linie */
+    margin-top: 0;        /* Entfernt den Standard-Abstand oben */
+    margin-bottom: 20px;  /* Abstand zum Inhalt der Sektion */
+}
+
+/* Stile für die Box mit den Einreichungs-Anforderungen */
+.submission-requirements {
+    background-color: #fff3cd; /* Helles Gelb als Hintergrund */
+    border: 1px solid #ffeeba;
+    border-left: 5px solid #ffc107; /* Linker Akzent-Rahmen in Gelb */
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.submission-requirements p {
+    margin-top: 0;
+    font-weight: 500;
+}
+
+.submission-requirements ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.submission-requirements ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.submission-requirements ul li i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.icon-red {
+    color: #dc3545; /* Rot für "nicht erfüllt" */
+}
+
+.icon-green {
+    color: #28a745; /* Grün für "erfüllt" */
+}
+
+/* Stile für die Hauptnavigation im Header */
+.app-header-nav a:not(.btn) {
+    color: #333; /* Dunklere Schriftfarbe für bessere Lesbarkeit */
+    text-decoration: none;
+    padding: 8px 15px; /* Innenabstand, um sie wie Buttons wirken zu lassen */
+    border-radius: 6px; /* Abgerundete Ecken */
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Hover-Effekt: Wenn man mit der Maus darüber fährt */
+.app-header-nav a:not(.btn):hover {
+    background-color: #e9ecef; /* Heller grauer Hintergrund */
+    color: #000;
+}
+
+/* Aktiv-Zustand: Für die aktuell geöffnete Seite */
+.app-header-nav a.active {
+    background-color: #007bff; /* Blauer Hintergrund für den aktiven Link */
+    color: #ffffff; /* Weißer Text */
+}
+
+/* Vertikale Trennlinie etwas dezenter gestalten */
+.app-header-nav span {
+    color: #ccc;
+    margin: 0 5px;
+}
+
+/* Navigation für die Filter im Admin-Bereich */
+.filter-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 15px;
+}
+
+.filter-nav a {
+    color: #495057;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.filter-nav a:hover {
+    background-color: #e9ecef;
+    color: #000;
+}
+
+.filter-nav a.active {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+/* Stile für Status-Badges */
+.status-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 15px;
+    color: white;
+    font-weight: 500;
+    font-size: 0.9em;
+    text-transform: capitalize;
+}
+.status-eingereicht { background-color: #F68A1E; } /* Orange */
+.status-bestaetigt { background-color: #28a745; } /* Grün */
+.status-abgelehnt { background-color: #dc3545; } /* Rot */
+.status-in_planung { background-color: #6F9ED4; } /* Blau */
+.status-fertig_abgerechnet { background-color: #17a2b8;} /* A nice teal/info color */
+.status-abrechnung_gesendet { background-color: #AB4EDD;} /* Dark Slate Grey */
+
+
+
+/* Einfaches Grid-Layout für Formulare */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Allgemeine Nachrichten-Boxen */
+.message-success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    border-radius: 5px;
+}
+.message-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    border-radius: 5px;
+}
+/* Stile für Formular-Gruppen (Label + Input) */
+.form-group {
+    margin-bottom: 20px; /* Abstand zwischen den einzelnen Feldern */
+}
+
+.form-group label {
+    display: block; /* Sorgt dafür, dass das Label eine eigene Zeile einnimmt */
+    font-weight: 500;
+    margin-bottom: 8px; /* Kleiner Abstand zwischen Label und Input-Feld */
+    color: #495057;
+}
+
+/* Einheitliches Styling für alle Text-Eingabefelder */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="password"] {
+    display: block;
+    width: 100%; /* Volle Breite des Containers nutzen */
+    padding: 10px 12px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box; /* Wichtig für korrekte Breitenberechnung */
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+/* Visuelles Feedback, wenn ein Feld aktiv ist (Fokus) */
+.form-group input:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+/* Gitter-Layout für die Übersichts-Sektion */
+.info-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr; /* Linke Spalte fix, rechte Spalte flexibel */
+    gap: 15px 20px;
+    align-items: center;
+}
+
+.info-grid strong {
+    font-weight: 500;
+    text-align: right;
+    color: #6c757d;
+}
+
+/* Layout für die Status-Verwaltung */
+.status-management {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 6px;
+}
+.status-management p {
+    margin: 0;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.status-actions {
+    display: flex;
+    gap: 10px;
+}
+.status-abrechnung_gesendet {
+    background-color: #AB4EDD; /* Dark Slate Grey */
+}
+
+/* Icons in den Buttons */
+.btn i {
+    margin-right: 8px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between; /* Platziert h3 links und die Links rechts */
+    align-items: center;
+    border-bottom: 2px solid #007bff;
+    margin-bottom: 20px;
+}
+
+.section-header h3 {
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: none;
+}
+
+.section-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* Box for payment status in admin view */
+.payment-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.payment-status p { margin: 0; }
+
+/* General purpose info message box */
+.message-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Box with payment details for customer */
+.payment-details {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+/* Stile für die Info-Box (blaue Box) */
+.message-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    padding: 15px;
+    border-radius: 5px;
+    
+    /* NEUE REGELN FÜR DIE AUSRICHTUNG */
+    display: flex; /* Macht die Box zu einem flexiblen Container */
+    align-items: center; /* Richtet Icon und Text vertikal mittig aus */
+    gap: 15px; /* Erzeugt einen Abstand zwischen Icon und Text */
+}
+
+/* Optional: Das Icon etwas größer machen */
+.message-info .fa-solid {
+    font-size: 1.5em;
+    flex-shrink: 0; /* Verhindert, dass das Icon schrumpft */
+}
+/* Styling for the new status change form */
+.status-form {
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.status-form .form-group {
+    margin-bottom: 15px;
+}
+
+.status-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.hinweistext {
+  font-size: 0.9em;      /* kleinere Schriftgröße */
+  color: #666;           /* dezente graue Farbe */
+  margin-top: 4px;       /* etwas Abstand nach oben */
+  display: block;        /* als Blockelement */
+  font-style: italic;    /* optional: kursiv */
+}
+
+/* =================================================================== */
+/* ### RESPONSIVE STYLES for Mobile Devices (max-width: 768px) ### */
+/* =================================================================== */
+
+@media (max-width: 768px) {
+
+    /* --- General Layout Adjustments --- */
+    .app-container {
+        margin: 15px auto;
+        padding: 0 15px;
+    }
+    .section {
+        padding: 15px;
+    }
+    .section h3 {
+        font-size: 1.2em;
+    }
+
+    /* --- Header --- */
+    .app-header {
+        padding: 10px 15px;
+        flex-direction: column; /* Stack logo and nav vertically */
+        gap: 10px;
+    }
+    .app-header-nav span {
+        display: none; /* Hide decorative dividers */
+    }
+
+    /* --- Login/Auth Pages --- */
+    .login-container {
+        padding: 20px;
+        margin: 20px;
+        width: auto;
+    }
+
+    /* --- Grid Layouts (force to single column) --- */
+    .profile-grid,
+    .form-grid,
+    div[style*="grid-template-columns"] { /* Target your inline-styled grids */
+        grid-template-columns: 1fr !important; /* Force a single column layout */
+    }
+
+    /* --- Responsive Tables (Stacking into a list) --- */
+    .styled-table {
+        border: none;
+        box-shadow: none;
+    }
+    .styled-table thead {
+        /* Hide the desktop header row */
+        display: none;
+    }
+    .styled-table tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .styled-table td {
+        display: block;
+        text-align: right; /* Align cell content to the right */
+        border: none;
+        border-bottom: 1px solid #eee;
+        padding-left: 50%; /* Create space for the label */
+        position: relative;
+    }
+    .styled-table td:last-child {
+        border-bottom: none;
+    }
+    /* Add the column header as a label before each cell */
+    .styled-table td::before {
+        content: attr(data-label); /* Use a data-label attribute for the text */
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+    /* Make form inputs and buttons in tables full-width */
+    .styled-table input,
+    .styled-table select,
+    .styled-table button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .styled-table .btn-icon {
+        width: 100%;
+        height: auto;
+    }
+    .styled-table form {
+        display: block;
+        width: 100%;
+    }
+    .styled-table td:last-child div {
+        display: flex;
+        gap: 10px;
+    }
+    .styled-table tfoot td {
+        padding-left: 15px; /* Adjust padding for add-new rows */
+    }
+    .styled-table tfoot td::before {
+        content: ""; /* No label for add-new rows */
+    }
+
+}
